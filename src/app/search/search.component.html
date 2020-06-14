@@ -1,0 +1,15 @@
+Search app works!
+
+<main>
+    <div class="search">
+        <input type="text" (keyup)="searchTerms.next($event.target.value)" class="form-control search-box" placeholder="Search Games">
+    </div>
+    <section>
+        
+        <div class="container">
+            <ul *ngFor="let game of games.results | slice: 0:10">
+                <div class="games"><h1>{{ game.name }}</h1></div>
+            </ul>
+        </div>
+    </section>
+</main>
