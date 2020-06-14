@@ -39,7 +39,13 @@ export class SearchComponent implements OnInit {
   })
   }
 
-
+  getPlatform() {
+    this.gameService.getPlatform().subscribe(data => {
+      this.games = data;
+      console.log(this.games);
+      console.log(this.games.results[0].name)
+  })
+  }
 
   getCharacters() {
     this.gameService.getCharacters().subscribe(data => {
@@ -63,6 +69,7 @@ export class SearchComponent implements OnInit {
       console.log(this.games.results[0].name)
   })
 }
+
   
   getRegion() {
     this.gameService.getRegion().subscribe(data => {
@@ -79,6 +86,7 @@ export class SearchComponent implements OnInit {
       console.log(this.games.results[0].name)
   })
 }
+
   
   
   ngOnInit(): void {
@@ -137,8 +145,6 @@ export class SearchComponent implements OnInit {
       
     });
   }
-  getPlatform() {
-    throw new Error("Method not implemented.");
-  }
+  
   }
   
