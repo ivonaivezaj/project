@@ -42,35 +42,32 @@ export class GameapiService {
     return this.http.get(api);
   }
 
-  
-
   getName() {
-    const api = 'https://www.giantbomb.com/api/platforms/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=name,image';
+    const api = `${this.baseUrl}/platforms/?api_key=${this.API_KEY}&format=json&field_list=name,image`;
     return this.http.get(api);
     }
 
     getCharacters() {
-      const api = 'https://www.giantbomb.com/api/characters/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=name'
+      const api = `${this.baseUrl}/characters/?api_key=${this.API_KEY}&format=json&field_list=name`;
       return this.http.get(api);
     }
 
     getPlatform() {
-      const api = 'https://www.giantbomb.com/api/platforms/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=name'
+      const api = `${this.baseUrl}/platforms/?api_key=${this.API_KEY}&format=json&field_list=name`
       return this.http.get(api);
     }
 
     getRating() {
-      const api = 'https://www.giantbomb.com/api/game_ratings/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=name'
+      const api = `${this.baseUrl}/game_ratings/?api_key=${this.API_KEY}&format=json&field_list=name`;
       return this.http.get(api);
     }
 
     getReviews(score: number) {
-      const api = `https://www.giantbomb.com/api/reviews/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=${score}`
+      const api = `${this.baseUrl}/reviews/?api_key=${this.API_KEY}&format=json&field_list=${score}`;
       return this.http.get(api);
     }
 
     getRegion() {
-      const api = 'https://www.giantbomb.com/api/regions/?api_key=0e5c263be7a96b8df205c354017ca71730b176c5&format=json&field_list=name'
+      const api = `${this.baseUrl}/regions/?api_key=${this.API_KEY}&format=json&field_list=name`;
       return this.http.get(api);
-    }
-}
+    }}
